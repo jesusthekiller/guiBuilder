@@ -1,0 +1,681 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>guiBuilder API documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>guiBuilder</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Fields">Fields</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/Gui.html">Gui</a></li>
+  <li><a href="../classes/Middleclass.html">Middleclass</a></li>
+  <li><a href="../classes/Utils.html">Utils</a></li>
+  <li><strong>Display</strong></li>
+  <li><a href="../classes/Connection.html">Connection</a></li>
+  <li><a href="../classes/GuiObject.html">GuiObject</a></li>
+  <li><a href="../classes/Listener.html">Listener</a></li>
+  <li><a href="../classes/Event.html">Event</a></li>
+</ul>
+<h2>Scripts</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../scripts/bootstrap.html">bootstrap</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>Display</code></h1>
+<p>Display class unifying all types of displays.</p>
+<p> Many of theese functions are simple wrappers around <a href="bit.ly/1gu3zoz">Term API</a>.
+ Wrappers (not only functions described as 'wrapper' but also those without description)
+ are passing all arguments to native function via <code>( ... )</code>, everything is returned as well.  </p>
+
+<p> <strong>Depends on:</strong>
+ > <a href="../classes/Middleclass.html#">Middleclass</a> <br/>
+ > <a href="../classes/Connection.html#">Connection</a>  </p>
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">Display = dofile(&quot;display.lua&quot;)</pre>
+    </ul>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Release</strong>: 0.01 (indev)</li>
+        <li><strong>Author</strong>: jesusthekiller</li>
+    </ul>
+
+
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Display.x">Display.x</a></td>
+	<td class="summary">Display width</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Display.y">Display.y</a></td>
+	<td class="summary">Display height</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Display:new">Display:new (connection)</a></td>
+	<td class="summary">Display class constructor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Display:rawWrite">Display:rawWrite (s)</a></td>
+	<td class="summary">
+
+</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Display:write">Display:write (...)</a></td>
+	<td class="summary">Works like <code>write()</code>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Display:print">Display:print (...)</a></td>
+	<td class="summary">Works like <code>print()</code>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Display:getCursorPos">Display:getCursorPos (...)</a></td>
+	<td class="summary">
+
+</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Display:setCursorPos">Display:setCursorPos (x, y)</a></td>
+	<td class="summary">
+
+</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Display:setCursorBlink">Display:setCursorBlink (blink)</a></td>
+	<td class="summary">
+
+</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Display:isColor">Display:isColor (...)</a></td>
+	<td class="summary">
+
+</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Display:isColour">Display:isColour (...)</a></td>
+	<td class="summary">Wrapper to <a href="../classes/Display.html#Display:isColor">Display:isColor</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Display:getSize">Display:getSize (...)</a></td>
+	<td class="summary">
+
+</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Display:scroll">Display:scroll (lines)</a></td>
+	<td class="summary">
+
+</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Display:setTextColor">Display:setTextColor (color)</a></td>
+	<td class="summary">
+
+</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Display:setTextColour">Display:setTextColour (...)</a></td>
+	<td class="summary">Wrapper to <a href="../classes/Display.html#Display:setTextColor">Display:setTextColor</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Display:setBackgroundColor">Display:setBackgroundColor (color)</a></td>
+	<td class="summary">
+
+</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Display:setBackgroundColour">Display:setBackgroundColour (...)</a></td>
+	<td class="summary">Wrapper to <a href="../classes/Display.html#Display:setBackgroundColor">Display:setBackgroundColor</a></td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Display:setTextScale">Display:setTextScale (scale)</a></td>
+	<td class="summary">Not really a wrapper.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Fields"></a>Fields</h2>
+    <dl class="function">
+    <dt>
+    <a name = "Display.x"></a>
+    <strong>Display.x</strong>
+    </dt>
+    <dd>
+    Display width
+
+
+    <ul>
+        <li><span class="parameter">x</span>
+            <span class="types"><span class="type">int</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Display.y"></a>
+    <strong>Display.y</strong>
+    </dt>
+    <dd>
+    Display height
+
+
+    <ul>
+        <li><span class="parameter">y</span>
+            <span class="types"><span class="type">int</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2><a name="Methods"></a>Methods</h2>
+    <dl class="function">
+    <dt>
+    <a name = "Display:new"></a>
+    <strong>Display:new (connection)</strong>
+    </dt>
+    <dd>
+    Display class constructor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">connection</span>
+            <span class="types"><a class="type" href="../classes/Connection.html#">Connection</a></span>
+         connection object between display and API
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> myDisplay = Display.new( connection )</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Display:rawWrite"></a>
+    <strong>Display:rawWrite (s)</strong>
+    </dt>
+    <dd>
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">s</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         text to write
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Display:write"></a>
+    <strong>Display:write (...)</strong>
+    </dt>
+    <dd>
+    Works like <code>write()</code>. <br/>
+ Not a wrapper <br/>
+ Borrowed from <code>bios.lua</code> <br/>
+ <strong>author: Dan200</strong>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+         strings to write
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">myDisplay:write( <span class="string">"text"</span>, <span class="string">"to"</span>, <span class="string">"write"</span> )</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Display:print"></a>
+    <strong>Display:print (...)</strong>
+    </dt>
+    <dd>
+    Works like <code>print()</code>. <br/>
+ Not a wrapper <br/>
+ Borrowed from <code>bios.lua</code> <br/>
+ <strong>author: Dan200</strong>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+         strings to print
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+           <span class="types"><span class="type">int</span></span>
+        x</li>
+        <li>
+           <span class="types"><span class="type">int</span></span>
+        y</li>
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">myDisplay:<span class="global">print</span>( <span class="string">"text"</span>, <span class="string">"to"</span>, <span class="string">"print"</span> )</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Display:getCursorPos"></a>
+    <strong>Display:getCursorPos (...)</strong>
+    </dt>
+    <dd>
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        x</li>
+        <li>
+        y</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Display:setCursorPos"></a>
+    <strong>Display:setCursorPos (x, y)</strong>
+    </dt>
+    <dd>
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+            <span class="types"><span class="type">int</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">y</span>
+            <span class="types"><span class="type">int</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Display:setCursorBlink"></a>
+    <strong>Display:setCursorBlink (blink)</strong>
+    </dt>
+    <dd>
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">blink</span>
+            <span class="types"><span class="type">bool</span></span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        isColor
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Display:isColor"></a>
+    <strong>Display:isColor (...)</strong>
+    </dt>
+    <dd>
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        isColor
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Display:isColour"></a>
+    <strong>Display:isColour (...)</strong>
+    </dt>
+    <dd>
+    Wrapper to <a href="../classes/Display.html#Display:isColor">Display:isColor</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+           <span class="types"><span class="type">bool</span></span>
+        isColour</li>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        x</li>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        y</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Display:getSize"></a>
+    <strong>Display:getSize (...)</strong>
+    </dt>
+    <dd>
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        x</li>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        y</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Display:scroll"></a>
+    <strong>Display:scroll (lines)</strong>
+    </dt>
+    <dd>
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">lines</span>
+            <span class="types"><span class="type">int</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Display:setTextColor"></a>
+    <strong>Display:setTextColor (color)</strong>
+    </dt>
+    <dd>
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">color</span>
+            <span class="types"><span class="type">int</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Display:setTextColour"></a>
+    <strong>Display:setTextColour (...)</strong>
+    </dt>
+    <dd>
+    Wrapper to <a href="../classes/Display.html#Display:setTextColor">Display:setTextColor</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/Display.html#Display:setTextColor">Display:setTextColor</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "Display:setBackgroundColor"></a>
+    <strong>Display:setBackgroundColor (color)</strong>
+    </dt>
+    <dd>
+
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">color</span>
+            <span class="types"><span class="type">int</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Display:setBackgroundColour"></a>
+    <strong>Display:setBackgroundColour (...)</strong>
+    </dt>
+    <dd>
+    Wrapper to <a href="../classes/Display.html#Display:setBackgroundColor">Display:setBackgroundColor</a>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/Display.html#Display:setBackgroundColor">Display:setBackgroundColor</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "Display:setTextScale"></a>
+    <strong>Display:setTextScale (scale)</strong>
+    </dt>
+    <dd>
+    Not really a wrapper. <br/>
+ Updates <a href="../classes/Display.html#Display.x">Display.x</a> and <a href="../classes/Display.html#Display.y">Display.y</a> on success
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">scale</span>
+            <span class="types"><span class="type">int</span></span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        false if terminal</li>
+        <li>
+        result of <code>Display.native.setTextScale( ... )</code> if monitor</li>
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>guiBuilder API documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>guiBuilder</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Fields">Fields</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/Gui.html">Gui</a></li>
+  <li><a href="../classes/Middleclass.html">Middleclass</a></li>
+  <li><a href="../classes/Utils.html">Utils</a></li>
+  <li><a href="../classes/Display.html">Display</a></li>
+  <li><a href="../classes/Connection.html">Connection</a></li>
+  <li><a href="../classes/GuiObject.html">GuiObject</a></li>
+  <li><strong>Listener</strong></li>
+  <li><a href="../classes/Event.html">Event</a></li>
+</ul>
+<h2>Scripts</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../scripts/bootstrap.html">bootstrap</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>Listener</code></h1>
+<p>Class definig all listeners.</p>
+<p> <strong>Depends on:</strong> <br/>
+ > <a href="../classes/Middleclass.html#">Middleclass</a> <br/>
+ > <a href="../classes/Event.html#">Event</a></p>
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">Listener = dofile(&quot;listener.lua&quot;)</pre>
+    </ul>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Release</strong>: 0.01 (indev)</li>
+        <li><strong>Author</strong>: jesusthekiller</li>
+    </ul>
+
+
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Listener.callback">Listener.callback</a></td>
+	<td class="summary">Listener's callback</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Listener.event">Listener.event</a></td>
+	<td class="summary">Listener's event type</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Listener.name">Listener.name</a></td>
+	<td class="summary">Listener's name</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Listener:new">Listener:new (callback, event, name)</a></td>
+	<td class="summary">Listener's constructor.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Listener:run">Listener:run ()</a></td>
+	<td class="summary">Run callback</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Fields"></a>Fields</h2>
+    <dl class="function">
+    <dt>
+    <a name = "Listener.callback"></a>
+    <strong>Listener.callback</strong>
+    </dt>
+    <dd>
+    Listener's callback
+
+
+    <ul>
+        <li><span class="parameter">callback</span>
+            <span class="types"><span class="type">function</span></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Listener.event"></a>
+    <strong>Listener.event</strong>
+    </dt>
+    <dd>
+    Listener's event type
+
+
+    <ul>
+        <li><span class="parameter">event</span>
+            <span class="types"><a class="type" href="../classes/Event.html#Event.type">Event.type</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Listener.name"></a>
+    <strong>Listener.name</strong>
+    </dt>
+    <dd>
+    Listener's name
+
+
+    <ul>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2><a name="Methods"></a>Methods</h2>
+    <dl class="function">
+    <dt>
+    <a name = "Listener:new"></a>
+    <strong>Listener:new (callback, event, name)</strong>
+    </dt>
+    <dd>
+    Listener's constructor.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">callback</span>
+            <span class="types"><span class="type">func</span></span>
+
+<ul>
+    <li>fucntion to be run when specified event happens</li>
+</ul>
+
+        </li>
+        <li><span class="parameter">event</span>
+            <span class="types"><a class="type" href="../classes/Event.html#Event.type">Event.type</a></span>
+         Event on which callback will be executed.
+        </li>
+        <li><span class="parameter">name</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Name of listener
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Listener:run"></a>
+    <strong>Listener:run ()</strong>
+    </dt>
+    <dd>
+    Run callback
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

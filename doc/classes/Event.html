@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>guiBuilder API documentation</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>guiBuilder</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Tables">Tables</a></li>
+<li><a href="#Fields">Fields</a></li>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/Gui.html">Gui</a></li>
+  <li><a href="../classes/Middleclass.html">Middleclass</a></li>
+  <li><a href="../classes/Utils.html">Utils</a></li>
+  <li><a href="../classes/Display.html">Display</a></li>
+  <li><a href="../classes/Connection.html">Connection</a></li>
+  <li><a href="../classes/GuiObject.html">GuiObject</a></li>
+  <li><a href="../classes/Listener.html">Listener</a></li>
+  <li><strong>Event</strong></li>
+</ul>
+<h2>Scripts</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../scripts/bootstrap.html">bootstrap</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>Event</code></h1>
+<p>Defines all events supported by guiBuilder.</p>
+<p> <strong>Depends on:</strong> <br/>
+ > <a href="../classes/Middleclass.html#">Middleclass</a>  </p>
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">Event = dofile(&quot;event.lua&quot;)</pre>
+    </ul>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Release</strong>: 0.01 (indev)</li>
+        <li><strong>Author</strong>: jesusthekiller</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Event.static.isEventType">Event.static.isEventType (eventType)</a></td>
+	<td class="summary">Check if eventType is valid <a href="../classes/Event.html#Event.type">Event.type</a>.</td>
+	</tr>
+</table>
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Event.type">Event.type</a></td>
+	<td class="summary">Event types.</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Event.parameters">Event.parameters</a></td>
+	<td class="summary">Parametes of event.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Event.event">Event.event</a></td>
+	<td class="summary">Type of event.</td>
+	</tr>
+</table>
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Event:new">Event:new (eventType, parameters)</a></td>
+	<td class="summary">Event constructor.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+    <dl class="function">
+    <dt>
+    <a name = "Event.static.isEventType"></a>
+    <strong>Event.static.isEventType (eventType)</strong>
+    </dt>
+    <dd>
+    Check if eventType is valid <a href="../classes/Event.html#Event.type">Event.type</a>.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">eventType</span>
+            <span class="types"><a class="type" href="../classes/Event.html#Event.type">Event.type</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2><a name="Tables"></a>Tables</h2>
+    <dl class="function">
+    <dt>
+    <a name = "Event.type"></a>
+    <strong>Event.type</strong>
+    </dt>
+    <dd>
+    Event types.
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">display_touch</span>
+         Fires when <a href="../classes/Display.html#">Display</a> is touched. Parameters: <code>x</code>, <code>y</code>, <code>mouse button</code> (when monitor always <code>1</code>)
+        </li>
+        <li><span class="parameter">http</span>
+         Combined <code>http_success</code> and <code>http_failure</code>. Parameters: <code>success</code>, <code>url</code>, <code>site contents</code> (when failed <code>nil</code>)
+        </li>
+        <li><span class="parameter">mouse_scroll</span>
+         Terminal only
+        </li>
+        <li><span class="parameter">mouse_drag</span>
+         Terminal only
+        </li>
+        <li><span class="parameter">char</span>
+         Terminal only
+        </li>
+        <li><span class="parameter">key</span>
+         Terminal only
+        </li>
+        <li><span class="parameter">alarm</span>
+
+
+
+        </li>
+        <li><span class="parameter">redstone</span>
+
+
+
+        </li>
+        <li><span class="parameter">disk</span>
+
+
+
+        </li>
+        <li><span class="parameter">disk_eject</span>
+
+
+
+        </li>
+        <li><span class="parameter">peripheral</span>
+
+
+
+        </li>
+        <li><span class="parameter">peripheral_detach</span>
+
+
+
+        </li>
+        <li><span class="parameter">rednet_message</span>
+
+
+
+        </li>
+        <li><span class="parameter">modem_message</span>
+
+
+
+        </li>
+        <li><span class="parameter">http_success</span>
+
+
+
+        </li>
+        <li><span class="parameter">http_failure</span>
+
+
+
+        </li>
+        <li><span class="parameter">turtle_inventory</span>
+         Turtle only
+        </li>
+        <li><span class="parameter">terminate</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2><a name="Fields"></a>Fields</h2>
+    <dl class="function">
+    <dt>
+    <a name = "Event.parameters"></a>
+    <strong>Event.parameters</strong>
+    </dt>
+    <dd>
+    Parametes of event.
+ Table indexed from 1.
+
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"> <span class="keyword">for</span> key, value <span class="keyword">in</span> <span class="global">ipairs</span>( myEvent.paratemets ) <span class="keyword">do</span>
+ 	<span class="global">print</span>(key..<span class="string">": "</span>..value)
+ <span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "Event.event"></a>
+    <strong>Event.event</strong>
+    </dt>
+    <dd>
+    Type of event.
+ Is field from <a href="../classes/Event.html#Event.type">Event.type</a>
+
+
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"> <span class="keyword">if</span> (myEvent.event == Event.<span class="global">type</span>.alarm) <span class="keyword">then</span>
+ 	<span class="global">print</span>(<span class="string">"Alarm just fired!"</span>)
+ <span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+</dl>
+    <h2><a name="Methods"></a>Methods</h2>
+    <dl class="function">
+    <dt>
+    <a name = "Event:new"></a>
+    <strong>Event:new (eventType, parameters)</strong>
+    </dt>
+    <dd>
+    Event constructor.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">eventType</span>
+            <span class="types"><a class="type" href="../classes/Event.html#Event.type">Event.type</a></span>
+
+
+
+        </li>
+        <li><span class="parameter">parameters</span>
+            <span class="types"><span class="type">tab</span></span>
+         Table containing all event parameters; number indexed; starting from 1
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
