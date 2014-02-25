@@ -63,7 +63,6 @@
 
 <p> <strong>Depends on:</strong> <br/>
  > <a href="../classes/Middleclass.html#">Middleclass</a> <br/>
- > ??? <br/>
  > <a href="../classes/Event.html#">Event</a> <br/>
  > <a href="../classes/Listener.html#">Listener</a>  </p>
     <h3>Usage:</h3>
@@ -87,7 +86,7 @@
 <h2><a href="#Methods">Methods</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#GuiObject:new">GuiObject:new (position, ...)</a></td>
+	<td class="name" nowrap><a href="#GuiObject:new">GuiObject:new (x, y, width, height, ...)</a></td>
 	<td class="summary">GuiObject constructor.</td>
 	</tr>
 	<tr>
@@ -155,7 +154,7 @@
     <dl class="function">
     <dt>
     <a name = "GuiObject:new"></a>
-    <strong>GuiObject:new (position, ...)</strong>
+    <strong>GuiObject:new (x, y, width, height, ...)</strong>
     </dt>
     <dd>
     GuiObject constructor.
@@ -164,9 +163,21 @@
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">position</span>
-            <span class="types"><span class="type">Position</span></span>
-         position of the object on the screen when rendered
+        <li><span class="parameter">x</span>
+            <span class="types"><span class="type">number</span></span>
+         X position of upper left corner
+        </li>
+        <li><span class="parameter">y</span>
+            <span class="types"><span class="type">number</span></span>
+         Y position of uppse left corner
+        </li>
+        <li><span class="parameter">width</span>
+            <span class="types"><span class="type">number</span></span>
+         Width of your object
+        </li>
+        <li><span class="parameter">height</span>
+            <span class="types"><span class="type">number</span></span>
+         Height of your object
         </li>
         <li><span class="parameter">...</span>
          Other parameters that your GuiObject might need

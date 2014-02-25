@@ -4,7 +4,6 @@
 --  
 -- **Depends on:**  
 -- > @{Middleclass}  
--- > @{Position}  
 -- > @{Event}  
 -- > @{Listener}  
 -- @usage GuiObject = dofile("guiObject.lua")
@@ -21,10 +20,13 @@ local GuiObject = class("guiObject")
 
 --- GuiObject constructor.
 -- Child's constructor has to call `GuiObject.initialize(self)` or implement all code from GuiObject constructor.
--- @tparam Position position position of the object on the screen when rendered
+-- @number x X position of upper left corner
+-- @number y Y position of uppse left corner
+-- @number width Width of your object
+-- @number height Height of your object
 -- @param ... Other parameters that your GuiObject might need
 -- @function GuiObject.new
-function GuiObject:Initialize( position, ... )
+function GuiObject:Initialize( x, y, width, height, ... )
 	self.listenersTable = {}
 end
 
