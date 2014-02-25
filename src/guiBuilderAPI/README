@@ -1,0 +1,16 @@
+local l = [[
+              HOW TO INCLUDE THIS API:
+               Do not use os.loadAPI!
+
+       Gui = dofile("path/to/bootstrap.file")
+      returned object is your library instance
+
+    you can also use local variable (local Gui)
+]]
+
+
+term.setBackgroundColor(colors.black)
+term.setTextColor(colors.white)
+term.clear()
+term.setCursorPos(1, 1)
+print(l)
