@@ -59,7 +59,10 @@
 
 <h1>Class <code>GuiObject</code></h1>
 <p>Superclass for all Gui objects.</p>
-<p> This is more of a guideline than a real class.</p>
+<p> This file is a template for your gui objects. <br/>
+ <strong>All gui objects have to implement ALL functions from this class!</strong> <br/>
+ Also, <strong>All gui objects have be a subclass of GuiObject!</strong> <br/>
+ For information, how to make a subclass, look at <code>usage</code> bellow.</p>
 
 <p> <strong>Depends on:</strong> <br/>
  > <a href="../classes/Middleclass.html#">Middleclass</a> <br/>
@@ -67,7 +70,11 @@
  > <a href="../classes/Listener.html#">Listener</a>  </p>
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">GuiObject = dofile(&quot;guiObject.lua&quot;)</pre>
+        <li><pre class="example">GuiObject = dofile(&quot;guiObject.lua&quot;)</pre></li>
+        <li><pre class="example"> -- Make new class using GuiObject as superclass
+ Button = class(&quot;Button&quot;, GuiObject)
+ -- This will also work:
+ Button = GuiObject:subclass(&quot;Button&quot;)</pre></li>
     </ul>
     <h3>Info:</h3>
     <ul>
@@ -81,6 +88,22 @@
 	<tr>
 	<td class="name" nowrap><a href="#GuiObject.listenersTable">GuiObject.listenersTable</a></td>
 	<td class="summary">Listeners table.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GuiObject.x">GuiObject.x</a></td>
+	<td class="summary">X position of upper left corner</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GuiObject.y">GuiObject.y</a></td>
+	<td class="summary">Y position of uppse left corner</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GuiObject.width">GuiObject.width</a></td>
+	<td class="summary">Width of your object</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#GuiObject.height">GuiObject.height</a></td>
+	<td class="summary">Height of your object</td>
 	</tr>
 </table>
 <h2><a href="#Methods">Methods</a></h2>
@@ -149,6 +172,90 @@
 
 
 </dd>
+    <dt>
+    <a name = "GuiObject.x"></a>
+    <strong>GuiObject.x</strong>
+    </dt>
+    <dd>
+    X position of upper left corner
+
+
+    <ul>
+        <li><span class="parameter">x</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "GuiObject.y"></a>
+    <strong>GuiObject.y</strong>
+    </dt>
+    <dd>
+    Y position of uppse left corner
+
+
+    <ul>
+        <li><span class="parameter">y</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "GuiObject.width"></a>
+    <strong>GuiObject.width</strong>
+    </dt>
+    <dd>
+    Width of your object
+
+
+    <ul>
+        <li><span class="parameter">width</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "GuiObject.height"></a>
+    <strong>GuiObject.height</strong>
+    </dt>
+    <dd>
+    Height of your object
+
+
+    <ul>
+        <li><span class="parameter">height</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
 </dl>
     <h2><a name="Methods"></a>Methods</h2>
     <dl class="function">
@@ -158,7 +265,7 @@
     </dt>
     <dd>
     GuiObject constructor.
- Child's constructor has to call <code>GuiObject.initialize(self)</code> or implement all code from GuiObject constructor.
+ Child's constructor has to call parrent's constructor or implement all code from GuiObject constructor.
 
 
     <h3>Parameters:</h3>
@@ -187,6 +294,13 @@
 
 
 
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"> <span class="comment">-- Call parrent's constructor
+</span> <span class="comment">--       +---- Note dot here
+</span> <span class="comment">--       V
+</span> GuiObject.new( self, x, y, width, height )</pre>
+    </ul>
 
 </dd>
     <dt>

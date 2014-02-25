@@ -1,12 +1,19 @@
 -----------------------------------------------------------------------
 -- Superclass for all Gui objects.
--- This is more of a guideline than a real class.
+-- This file is a template for your gui objects.  
+-- **All gui objects have to implement ALL functions from this class!**  
+-- Also, **All gui objects have be a subclass of GuiObject!**  
+-- For information, how to make a subclass, look at `usage` bellow.
 --  
 -- **Depends on:**  
 -- > @{Middleclass}  
 -- > @{Event}  
 -- > @{Listener}  
 -- @usage GuiObject = dofile("guiObject.lua")
+-- @usage -- Make new class using GuiObject as superclass
+-- Button = class("Button", GuiObject)
+-- -- This will also work:
+-- Button = GuiObject:subclass("Button")
 -- @release 0.01 (indev)
 -- @author jesusthekiller
 -- @classmod GuiObject
@@ -18,15 +25,32 @@ local GuiObject = class("guiObject")
 -- Indexed by @{Listener.name}
 -- @tfield table listenersTable
 
+--- X position of upper left corner
+-- @field x
+
+--- Y position of uppse left corner
+-- @field y
+
+--- Width of your object
+-- @field width
+
+--- Height of your object
+-- @field height
+
 --- GuiObject constructor.
--- Child's constructor has to call `GuiObject.initialize(self)` or implement all code from GuiObject constructor.
+-- Child's constructor has to call parrent's constructor or implement all code from GuiObject constructor.
 -- @number x X position of upper left corner
 -- @number y Y position of uppse left corner
 -- @number width Width of your object
 -- @number height Height of your object
 -- @param ... Other parameters that your GuiObject might need
+-- @usage -- Call parrent's constructor
+-- --       +---- Note dot here
+-- --       V
+-- GuiObject.new( self, x, y, width, height )
 -- @function GuiObject.new
 function GuiObject:Initialize( x, y, width, height, ... )
+	self.x, self.y, self.width, self.height = x, y, width, height
 	self.listenersTable = {}
 end
 
@@ -107,6 +131,5 @@ end
 function GuiObject:getAllListeners()
 	return self.listenersTable
 end
-
 
 return GuiObject
