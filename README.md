@@ -10,6 +10,7 @@ Updated documentation is avaliable online [here](https://rawgithub.com/jesusthek
 You will need 
 
 **Requred tools:**  
+* Lua
 * [luarocks](http://luarocks.org/) (to install LDoc and markdown)
 * LDoc (`luarocks install ldoc`)
 * markdown (`luarocks install markdown`)
