@@ -1,11 +1,47 @@
+-- How to load Gui API:
+--dofile("path/to/bootstrap.lua")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 local l = [[
               HOW TO INCLUDE THIS API:
                Do not use os.loadAPI!
 
-       Gui = dofile("path/to/bootstrap.file")
+           dofile("path/to/bootstrap.lua")
       returned object is your library instance
-
-    you can also use local variable (local Gui)
 ]]
 
 
