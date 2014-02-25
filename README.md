@@ -7,7 +7,7 @@ Documentation
 Updated documentation is avaliable online [here](https://rawgithub.com/jesusthekiller/guiBuilder/master/doc/index.html)
 
 ### Generate doc ###
-**Requred tools:**  
+**Requred tools:**
 * lua 
 * [luarocks](http://luarocks.org/)
 * LDoc (`luarocks install ldoc`)
