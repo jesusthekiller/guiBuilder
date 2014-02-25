@@ -5,8 +5,12 @@ Main repo for GuiBuilder and Gui API
 
 * * *
 
-How to generate documentation
------------------------------
+Documentation
+-------------
+
+Updated documentation is avaliable online [here](https://rawgithub.com/jesusthekiller/guiBuilder/master/doc/index.html)
+
+### Generate doc ###
 
 1. Requred tools:
 	* LDoc (`luarocks install ldoc`)
