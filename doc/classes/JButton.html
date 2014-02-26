@@ -32,6 +32,7 @@
 
 <h2>Contents</h2>
 <ul>
+<li><a href="#Fields">Fields</a></li>
 <li><a href="#Methods">Methods</a></li>
 </ul>
 
@@ -68,8 +69,8 @@
  > <a href="../classes/Event.html#">Event</a> <br/>
  > <a href="../classes/Listener.html#">Listener</a> <br/>
  > <a href="../classes/GuiObject.html#">GuiObject</a> <br/>
- > <a href="../classes/Position.html#">Position</a>
- > <a href="../classes/Color.html#">Color</a></p>
+ > <a href="../classes/Position.html#">Position</a> <br/>
+ > <a href="../classes/Color.html#">Color</a>  </p>
     <h3>Usage:</h3>
     <ul>
         <pre class="example">JButton = dofile(&quot;guiObjects/JButton.lua&quot;)</pre>
@@ -81,11 +82,30 @@
     </ul>
 
 
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#JButton.static._DEFAULT_TIMEOUT">JButton.static._DEFAULT_TIMEOUT</a></td>
+	<td class="summary">[<code>static</code>] Default timeout.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#JButton.static._DEFAULT_SHADOW">JButton.static._DEFAULT_SHADOW</a></td>
+	<td class="summary">[<code>static</code>] Default shadow setting.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#JButton.static._DEFAULT_COLOR">JButton.static._DEFAULT_COLOR</a></td>
+	<td class="summary">[<code>static</code>] Default color scheme.</td>
+	</tr>
+</table>
 <h2><a href="#Methods">Methods</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#JButton:new">JButton:new (position, colors)</a></td>
+	<td class="name" nowrap><a href="#JButton:new">JButton:new (position, color, timeout, shadow)</a></td>
 	<td class="summary">JButton constructor.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#JButton:draw">JButton:draw (display)</a></td>
+	<td class="summary">As specified by <a href="../classes/GuiObject.html#">GuiObject</a>.</td>
 	</tr>
 </table>
 
@@ -93,25 +113,67 @@
 <br/>
 
 
-    <h2><a name="Methods"></a>Methods</h2>
+    <h2><a name="Fields"></a>Fields</h2>
     <dl class="function">
     <dt>
-    <a name = "JButton:new"></a>
-    <strong>JButton:new (position, colors)</strong>
+    <a name = "JButton.static._DEFAULT_TIMEOUT"></a>
+    <strong>JButton.static._DEFAULT_TIMEOUT</strong>
     </dt>
     <dd>
-    JButton constructor.
+    [<code>static</code>] Default timeout.
 
 
-    <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">position</span>
-            <span class="types"><a class="type" href="../classes/Position.html#">Position</a></span>
-
-
-
+        <li><span class="parameter">_DEFAULT_TIMEOUT</span>
+            <span class="types"><span class="type">number</span></span>
+         0.2 second
         </li>
-        <li><span class="parameter">colors</span>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "JButton.static._DEFAULT_SHADOW"></a>
+    <strong>JButton.static._DEFAULT_SHADOW</strong>
+    </dt>
+    <dd>
+    [<code>static</code>] Default shadow setting.
+
+
+    <ul>
+        <li><span class="parameter">_DEFAULT_SHADOW</span>
+            <span class="types"><span class="type">bool</span></span>
+         true
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "JButton.static._DEFAULT_COLOR"></a>
+    <strong>JButton.static._DEFAULT_COLOR</strong>
+    </dt>
+    <dd>
+
+<p>[<code>static</code>] Default color scheme. <br/>
+ <strong>Values:</strong>  </p>
+<pre><code>text: black
+background: light gray
+shadow: gray
+textPressed: white
+backgroundPressed: gray
+</code></pre>
+
+
+
+    <ul>
+        <li><span class="parameter">_DEFAULT_COLOR</span>
             <span class="types"><a class="type" href="../classes/Color.html#">Color</a></span>
 
 
@@ -122,10 +184,79 @@
 
 
 
+
+</dd>
+</dl>
+    <h2><a name="Methods"></a>Methods</h2>
+    <dl class="function">
+    <dt>
+    <a name = "JButton:new"></a>
+    <strong>JButton:new (position, color, timeout, shadow)</strong>
+    </dt>
+    <dd>
+    JButton constructor.   </p>
+
+<p> <strong>Colors in</strong> <code>color</code><strong>:</strong>   </p>
+<pre><code>* text
+* background
+* shadow
+* textPressed (Color when button is pressed
+* backgroundPressed (Color when button is pressed)
+</code></pre>
+<p> <strong>Note:</strong> <em>if color will be left unspecified, default from</em> <a href="../classes/JButton.html#JButton.static._DEFAULT_COLOR">JButton._DEFAULT_COLOR</a> <em>will be used.</em>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+            <span class="types"><a class="type" href="../classes/Position.html#">Position</a></span>
+
+
+
+        </li>
+        <li><span class="parameter">color</span>
+            <span class="types"><a class="type" href="../classes/Color.html#">Color</a></span>
+
+
+
+        </li>
+        <li><span class="parameter">timeout</span>
+            <span class="types"><span class="type">number</span></span>
+         Click animation length (in seconds). Optional, default = <a href="../classes/JButton.html#JButton.static._DEFAULT_TIMEOUT">JButton._DEFAULT_TIMEOUT</a>.
+        </li>
+        <li><span class="parameter">shadow</span>
+            <span class="types"><span class="type">bool</span></span>
+         Draw shadow? Optional, default = <a href="../classes/JButton.html#JButton.static._DEFAULT_SHADOW">JButton._DEFAULT_SHADOW</a>
+        </li>
+    </ul>
+
+
+
+
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">myButton = JButton:new(position, colors)</pre>
+        <pre class="example">myButton = JButton:new(position, color)</pre>
     </ul>
+
+</dd>
+    <dt>
+    <a name = "JButton:draw"></a>
+    <strong>JButton:draw (display)</strong>
+    </dt>
+    <dd>
+    As specified by <a href="../classes/GuiObject.html#">GuiObject</a>.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">display</span>
+        Draw button itself
+        </li>
+    </ul>
+
+
+
+
 
 </dd>
 </dl>

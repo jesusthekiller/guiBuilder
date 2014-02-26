@@ -13,8 +13,9 @@
 
 local Gui = class("Gui")
 
---- Gui API version [`static`].
+--- [`static`] Gui API version.
 -- @usage print(Gui._VERSION)
+-- @tfield number _VERSION 0.01
 Gui.static._VERSION = 0.01
 
 --- Gui class constructor

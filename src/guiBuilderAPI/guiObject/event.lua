@@ -26,7 +26,7 @@ local Event = class("Event")
 -- end
 -- @field Event.event
 
---- Event types.
+--- [`static`] Event types.
 -- @field display_touch Fires when @{Display} is touched. Parameters: `x`, `y`, `mouse button` (when monitor always `1`)
 -- @field http Combined `http_success` and `http_failure`. Parameters: `success`, `url`, `site contents` (when failed `nil`)
 -- @field mouse_scroll Terminal only
@@ -68,7 +68,7 @@ Event.static.type = {
 	turtle_inventory = "turtle_inventory",
 }
 
---- Check if eventType is valid @{Event.type}.
+--- [`static`] Check if eventType is valid @{Event.type}.
 -- @tparam Event.type eventType
 function Event.static.isEventType( eventType )
 	-- Validate eventType
@@ -85,10 +85,11 @@ end
 --- Event constructor.
 -- @tparam Event.type eventType
 -- @tab parameters Table containing all event parameters; number indexed; starting from 1
+-- @usage local myEvent = Event:new( Event.type.display_touch, params )
 -- @function Event.new
 function Event:initialize( eventType, parameters )
-	assert(Event.isEventType(eventType), "Parameter #1 is not valid Event.type")
-	assert(type(params) == "table", "Parameter #2 is not an table")
+	assert(Event.isEventType(eventType), "Parameter \"eventType\" is not valid Event.type")
+	assert(type(params) == "table", "Parameter \"parameters\" is not an table")
 
 	self.event = eventType
 	self.parameters = parameters

@@ -11,10 +11,10 @@
 
 local Connection = class("Connection")
 
---- ConnectionType enum [`static`].
+--- [`static`] Types of connections.
 -- @field terminal
 -- @field peripheral
--- @field network
+-- @field network Not Yet Implemented!
 -- @table connectionType
 -- @usage Connection:new( Conncetion.conectionType.peripheral, ... )
 Connection.static.connectionType = {

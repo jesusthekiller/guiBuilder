@@ -17,7 +17,7 @@ local Color = class("Color")
 -- local txtColor = myColorPallete.color.textColor
 -- @tfield table color
 
---- Color constructor
+--- Color constructor.
 -- @string label Label for color.
 -- @number color Color from `colors.colorName`. Look [here](http://bit.ly/1evHuU0). Instead of color code, you can use `"random"` for random color (every thime another color) or `"random static"` for random color that will stay same as long, as program is not closed.
 -- @param ... More colors and more labels, alternaiting.

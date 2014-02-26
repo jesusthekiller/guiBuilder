@@ -70,7 +70,8 @@
 <p> <strong>Depends on:</strong> <br/>
  > <a href="../classes/Middleclass.html#">Middleclass</a> <br/>
  > <a href="../classes/Event.html#">Event</a> <br/>
- > <a href="../classes/Listener.html#">Listener</a>  </p>
+ > <a href="../classes/Listener.html#">Listener</a> <br/>
+ > <a href="../classes/Position.html#">Position</a></p>
     <h3>Usage:</h3>
     <ul>
         <li><pre class="example">GuiObject = dofile(&quot;guiObject.lua&quot;)</pre></li>
@@ -108,7 +109,7 @@
 	<td class="summary">GuiObject constructor.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#GuiObject:draw">GuiObject:draw ()</a></td>
+	<td class="name" nowrap><a href="#GuiObject:draw">GuiObject:draw (display)</a></td>
 	<td class="summary">Draw function.</td>
 	</tr>
 	<tr>
@@ -251,13 +252,19 @@
 </dd>
     <dt>
     <a name = "GuiObject:draw"></a>
-    <strong>GuiObject:draw ()</strong>
+    <strong>GuiObject:draw (display)</strong>
     </dt>
     <dd>
     Draw function.
- Called by <a href="../classes/Gui.html#">Gui</a>
 
 
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">display</span>
+            <span class="types"><a class="type" href="../classes/Display.html#">Display</a></span>
+         Called by <a href="../classes/Gui.html#">Gui</a>
+        </li>
+    </ul>
 
 
 

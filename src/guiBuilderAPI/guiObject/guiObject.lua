@@ -9,6 +9,7 @@
 -- > @{Middleclass}  
 -- > @{Event}  
 -- > @{Listener}  
+-- > @{Position}
 -- @usage GuiObject = dofile("guiObject.lua")
 -- @usage -- Make new class using GuiObject as superclass
 -- Button = class("Button", GuiObject)
@@ -50,8 +51,9 @@ function GuiObject:initialize( position, ... )
 end
 
 --- Draw function.
+-- @tparam Display display
 -- Called by @{Gui}
-function GuiObject:draw()
+function GuiObject:draw( display )
 	error("Your Gui object does not implement draw() funciton!")
 end
 
@@ -86,7 +88,7 @@ end
 -- @treturn bool False if this listener does not exists anymore
 -- @return ... one bool for each listener, in same order as in input
 function GuiObject:removeListener( ... )
-		local argv, ret = { ... }, {}
+	local argv, ret = { ... }, {}
 	assert(#argv > 0, "No arguments specified")
 
 	for k,v in ipairs(argv) do

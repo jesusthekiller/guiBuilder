@@ -28,10 +28,9 @@ local Listener = class("Listener")
 -- @string name Name of listener
 -- @function Listener.new
 function Listener:initialize( callback, event, name )
-	assert(type("callback") ~= "function", "Callback is not an function")
-	assert(type(name) ~= "string", "Name is not an string")
-
-	
+	assert(type("callback") ~= "function", "Parameter \"callback\" is not an function")
+	assert(Event.isEventType(event), "Parameter \"event\" is not valid Event.type")
+	assert(type(name) ~= "string", "Parameter \"name\" is not an string")
 
 	self.callback = callback
 	self.event = event
