@@ -22,18 +22,18 @@ Gui = dofile("gui.lua")
 ]]
 
 local toLoad = {
-	{"/.guiBuilder/middleclass.lua", "class"},
+	{"/guiBuilderAPI/middleclass.lua", "class"},
 
-	{"/.guiBuilder/utils.lua", "Utils"},
+	{"/guiBuilderAPI/utils.lua", "Utils"},
 	
-	{"/.guiBuilder/display/connection.lua", "Connection"},
-	{"/.guiBuilder/display/display.lua", "Display"},
+	{"/guiBuilderAPI/display/connection.lua", "Connection"},
+	{"/guiBuilderAPI/display/display.lua", "Display"},
 
-	{'/.guiBuilder/guiObject/guiObject.lua', "GuiObject"},
-	{'/.guiBuilder/guiObject/event.lua', "Event"},
-	{'/.guiBuilder/guiObject/listener.lua', "Listener"},
+	{'/guiBuilderAPI/guiObject/guiObject.lua', "GuiObject"},
+	{'/guiBuilderAPI/guiObject/event.lua', "Event"},
+	{'/guiBuilderAPI/guiObject/listener.lua', "Listener"},
 
-	{"/.guiBuilder/gui.lua", "Gui"},
+	{"/guiBuilderAPI/gui.lua", "Gui"},
 }
 
 for _,v in ipairs(toLoad) do

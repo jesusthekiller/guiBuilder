@@ -1,1 +1,21 @@
 dofile("guiBuilderAPI/bootstrap.lua")
+
+local a = class("a")
+
+function a:initialize( x )
+	self.x = x
+end
+
+function a:test()
+	print(self.x)
+end
+
+local b = class("b", a)
+
+function b:initialize( x )
+	print("b:"..x)
+	a.initialize(self, x)
+end
+
+local bi = b:new( 2 )
+bi:test()

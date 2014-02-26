@@ -17,4 +17,7 @@ file={
 	'src/guiBuilderAPI/guiObject/guiObject.lua',
 	'src/guiBuilderAPI/guiObject/listener.lua',
 	'src/guiBuilderAPI/guiObject/event.lua',
+
+	-- guiObjects
+	'src/guiBuilderAPI/guiObject/guiObjects/JButton.lua',
 }
