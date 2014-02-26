@@ -39,14 +39,14 @@
 
 <h2>Classes</h2>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
-  <li><strong>Gui</strong></li>
+  <li><a href="../classes/Gui.html">Gui</a></li>
   <li><a href="../classes/Middleclass.html">Middleclass</a></li>
   <li><a href="../classes/Utils.html">Utils</a></li>
   <li><a href="../classes/Display.html">Display</a></li>
   <li><a href="../classes/Connection.html">Connection</a></li>
   <li><a href="../classes/Listener.html">Listener</a></li>
   <li><a href="../classes/Event.html">Event</a></li>
-  <li><a href="../classes/Position.html">Position</a></li>
+  <li><strong>Position</strong></li>
   <li><a href="../classes/Color.html">Color</a></li>
   <li><a href="../classes/GuiObject.html">GuiObject</a></li>
   <li><a href="../classes/JButton.html">JButton</a></li>
@@ -60,15 +60,13 @@
 
 <div id="content">
 
-<h1>Class <code>Gui</code></h1>
-<p>Main class for Gui API.</p>
+<h1>Class <code>Position</code></h1>
+<p>Postiton class.</p>
 <p> <strong>Depends on:</strong> <br/>
- > <a href="../classes/Middleclass.html#">Middleclass</a> <br/>
- > <a href="../classes/Connection.html#">Connection</a> <br/>
- > <a href="../classes/Display.html#">Display</a>  </p>
+ > <a href="../classes/Middleclass.html#">Middleclass</a>   </p>
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">Gui = dofile(&quot;gui.lua&quot;)</pre>
+        <pre class="example">Position = dofile(&quot;position.lua&quot;)</pre>
     </ul>
     <h3>Info:</h3>
     <ul>
@@ -80,15 +78,27 @@
 <h2><a href="#Fields">Fields</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#Gui.static._VERSION">Gui.static._VERSION</a></td>
-	<td class="summary">Gui API version [<code>static</code>].</td>
+	<td class="name" nowrap><a href="#Position.x">Position.x</a></td>
+	<td class="summary">X coords fo upper left corner.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Position.y">Position.y</a></td>
+	<td class="summary">Y coords fo upper left corner.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Position.width">Position.width</a></td>
+	<td class="summary">Width.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Position.height">Position.height</a></td>
+	<td class="summary">Height.</td>
 	</tr>
 </table>
 <h2><a href="#Methods">Methods</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#Gui:new">Gui:new (display)</a></td>
-	<td class="summary">Gui class constructor</td>
+	<td class="name" nowrap><a href="#Position:initialize">Position:initialize (x, y, width, height)</a></td>
+	<td class="summary">Position constructor.</td>
 	</tr>
 </table>
 
@@ -99,39 +109,93 @@
     <h2><a name="Fields"></a>Fields</h2>
     <dl class="function">
     <dt>
-    <a name = "Gui.static._VERSION"></a>
-    <strong>Gui.static._VERSION</strong>
+    <a name = "Position.x"></a>
+    <strong>Position.x</strong>
     </dt>
     <dd>
-    Gui API version [<code>static</code>].
+    X coords fo upper left corner.
 
 
 
 
 
 
-    <h3>Usage:</h3>
-    <ul>
-        <pre class="example"><span class="global">print</span>(Gui._VERSION)</pre>
-    </ul>
+
+</dd>
+    <dt>
+    <a name = "Position.y"></a>
+    <strong>Position.y</strong>
+    </dt>
+    <dd>
+    Y coords fo upper left corner.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Position.width"></a>
+    <strong>Position.width</strong>
+    </dt>
+    <dd>
+    Width.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Position.height"></a>
+    <strong>Position.height</strong>
+    </dt>
+    <dd>
+    Height.
+
+
+
+
+
+
 
 </dd>
 </dl>
     <h2><a name="Methods"></a>Methods</h2>
     <dl class="function">
     <dt>
-    <a name = "Gui:new"></a>
-    <strong>Gui:new (display)</strong>
+    <a name = "Position:initialize"></a>
+    <strong>Position:initialize (x, y, width, height)</strong>
     </dt>
     <dd>
-    Gui class constructor
+    Position constructor.
 
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">display</span>
-            <span class="types"><a class="type" href="../classes/Display.html#">Display</a></span>
-         Display object that gui will be rendered onto
+        <li><span class="parameter">x</span>
+            <span class="types"><span class="type">number</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">y</span>
+            <span class="types"><span class="type">number</span></span>
+
+
+
+        </li>
+        <li><span class="parameter">width</span>
+            <span class="types"><span class="type">number</span></span>
+         Bigger than 0
+        </li>
+        <li><span class="parameter">height</span>
+            <span class="types"><span class="type">number</span></span>
+         Bigger than 0
         </li>
     </ul>
 
@@ -140,7 +204,7 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"><span class="keyword">local</span> myGui = Gui.new( display )</pre>
+        <pre class="example">myPosition = Position:new( x, y, width, height )</pre>
     </ul>
 
 </dd>

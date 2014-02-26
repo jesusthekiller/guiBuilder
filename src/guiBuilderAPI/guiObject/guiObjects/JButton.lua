@@ -7,13 +7,22 @@
 -- > @{Event}  
 -- > @{Listener}  
 -- > @{GuiObject}  
--- @usage JButton = dofile("guiObjects/JButton")
+-- > @{Position}
+-- > @{Color}
+-- @usage JButton = dofile("guiObjects/JButton.lua")
 -- @release 0.01 (indev)
 -- @author jesusthekiller
 -- @classmod JButton
 -----------------------------------------------------------------------
 local JButton = GuiObject:subclass("JButton")
 
-function JButton:initialize()
+--- JButton constructor.
+-- @tparam Position position
+-- @tparam Color colors
+-- @usage myButton = JButton:new(position, colors)
+-- @function JButton.new
+function JButton:initialize( position, colors )
 
 end
+
+return JButton

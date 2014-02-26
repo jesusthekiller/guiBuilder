@@ -43,9 +43,12 @@
   <li><strong>Utils</strong></li>
   <li><a href="../classes/Display.html">Display</a></li>
   <li><a href="../classes/Connection.html">Connection</a></li>
-  <li><a href="../classes/GuiObject.html">GuiObject</a></li>
   <li><a href="../classes/Listener.html">Listener</a></li>
   <li><a href="../classes/Event.html">Event</a></li>
+  <li><a href="../classes/Position.html">Position</a></li>
+  <li><a href="../classes/Color.html">Color</a></li>
+  <li><a href="../classes/GuiObject.html">GuiObject</a></li>
+  <li><a href="../classes/JButton.html">JButton</a></li>
 </ul>
 <h2>Scripts</h2>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
@@ -75,7 +78,11 @@
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#Utils.static.isInstance">Utils.static.isInstance (class, test)</a></td>
-	<td class="summary">Safely checks if <code>test</code> is an instance of <code>class</code>.</td>
+	<td class="summary">Safely checks if <code>test</code> is an instance of <code>class</code> [<code>static</code>].</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Utils.static.round">Utils.static.round (number)</a></td>
+	<td class="summary">Round number [<code>static</code>].</td>
 	</tr>
 </table>
 
@@ -90,7 +97,7 @@
     <strong>Utils.static.isInstance (class, test)</strong>
     </dt>
     <dd>
-    Safely checks if <code>test</code> is an instance of <code>class</code>.
+    Safely checks if <code>test</code> is an instance of <code>class</code> [<code>static</code>].
 
 
     <h3>Parameters:</h3>
@@ -108,6 +115,35 @@
 
            <span class="types"><span class="type">bool</span></span>
         Is instance? If any of args are not object, return false.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Utils.static.round"></a>
+    <strong>Utils.static.round (number)</strong>
+    </dt>
+    <dd>
+    Round number [<code>static</code>].
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">number</span>
+            <span class="types"><span class="type">number</span></span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        Rounded number
     </ol>
 
 

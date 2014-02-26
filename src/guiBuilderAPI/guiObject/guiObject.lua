@@ -25,33 +25,28 @@ local GuiObject = class("guiObject")
 -- Indexed by @{Listener.name}
 -- @tfield table listenersTable
 
---- X position of upper left corner
--- @field x
+--- Position of object
+-- @tfield Position position
 
---- Y position of uppse left corner
--- @field y
-
---- Width of your object
--- @field width
-
---- Height of your object
--- @field height
+--- Should object receive `display_touch` events from any position?
+-- Useful if you are making i.e drop list.
+-- Please note that changeing `position` dynamically might be a better solution.  
+-- By default GuiObject:initialize sets this field to `false`. 
+-- @tfield bool getAllTouchEv
 
 --- GuiObject constructor.
 -- Child's constructor has to call parrent's constructor or implement all code from GuiObject constructor.
--- @number x X position of upper left corner
--- @number y Y position of uppse left corner
--- @number width Width of your object
--- @number height Height of your object
+-- @tparam Postion position and size of object.
 -- @param ... Other parameters that your GuiObject might need
 -- @usage -- Call parrent's constructor
 -- --       +---- Note dot here
 -- --       V
--- GuiObject.new( self, x, y, width, height )
--- @function GuiObject.new
-function GuiObject:initialize( x, y, width, height, ... )
-	self.x, self.y, self.width, self.height = x, y, width, height
+-- GuiObject.initialize( self, position )
+function GuiObject:initialize( position, ... )
+	assert(Utils.isInstance(Postion, position), "Argument position is not as instance of Postion")
+	self.position = position
 	self.listenersTable = {}
+	self.getAllTouchEv = false
 end
 
 --- Draw function.
@@ -76,7 +71,7 @@ function GuiObject:addListener( ... )
 	local args, ret = { ... }, {}
 
 	for k,v in ipairs(argv) do
-		assert(Utils.isInstance(Listener, "Argument #"..k.." is not an instance of class Listener"))
+		assert(Utils.isInstance(Listener, v), "Argument #"..k.." is not an instance of class Listener")
 
 		ret[k] = (self.listenersTable[v.name])
 		if (ret[k]) then self.listenersTable[v.name] = v end

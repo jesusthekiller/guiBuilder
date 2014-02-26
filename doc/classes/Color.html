@@ -39,7 +39,7 @@
 
 <h2>Classes</h2>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
-  <li><strong>Gui</strong></li>
+  <li><a href="../classes/Gui.html">Gui</a></li>
   <li><a href="../classes/Middleclass.html">Middleclass</a></li>
   <li><a href="../classes/Utils.html">Utils</a></li>
   <li><a href="../classes/Display.html">Display</a></li>
@@ -47,7 +47,7 @@
   <li><a href="../classes/Listener.html">Listener</a></li>
   <li><a href="../classes/Event.html">Event</a></li>
   <li><a href="../classes/Position.html">Position</a></li>
-  <li><a href="../classes/Color.html">Color</a></li>
+  <li><strong>Color</strong></li>
   <li><a href="../classes/GuiObject.html">GuiObject</a></li>
   <li><a href="../classes/JButton.html">JButton</a></li>
 </ul>
@@ -60,15 +60,13 @@
 
 <div id="content">
 
-<h1>Class <code>Gui</code></h1>
-<p>Main class for Gui API.</p>
+<h1>Class <code>Color</code></h1>
+<p>Container for color pallete.</p>
 <p> <strong>Depends on:</strong> <br/>
- > <a href="../classes/Middleclass.html#">Middleclass</a> <br/>
- > <a href="../classes/Connection.html#">Connection</a> <br/>
- > <a href="../classes/Display.html#">Display</a>  </p>
+ > <a href="../classes/Middleclass.html#">Middleclass</a>  </p>
     <h3>Usage:</h3>
     <ul>
-        <pre class="example">Gui = dofile(&quot;gui.lua&quot;)</pre>
+        <pre class="example">Color = dofile(&quot;color.lua&quot;)</pre>
     </ul>
     <h3>Info:</h3>
     <ul>
@@ -80,15 +78,15 @@
 <h2><a href="#Fields">Fields</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#Gui.static._VERSION">Gui.static._VERSION</a></td>
-	<td class="summary">Gui API version [<code>static</code>].</td>
+	<td class="name" nowrap><a href="#Color.color">Color.color</a></td>
+	<td class="summary">Field containing table indexed by color labels.</td>
 	</tr>
 </table>
 <h2><a href="#Methods">Methods</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#Gui:new">Gui:new (display)</a></td>
-	<td class="summary">Gui class constructor</td>
+	<td class="name" nowrap><a href="#Color:new">Color:new (label, color, ...)</a></td>
+	<td class="summary">Color constructor</td>
 	</tr>
 </table>
 
@@ -99,39 +97,19 @@
     <h2><a name="Fields"></a>Fields</h2>
     <dl class="function">
     <dt>
-    <a name = "Gui.static._VERSION"></a>
-    <strong>Gui.static._VERSION</strong>
+    <a name = "Color.color"></a>
+    <strong>Color.color</strong>
     </dt>
     <dd>
-    Gui API version [<code>static</code>].
+    Field containing table indexed by color labels.
 
 
-
-
-
-
-    <h3>Usage:</h3>
     <ul>
-        <pre class="example"><span class="global">print</span>(Gui._VERSION)</pre>
-    </ul>
-
-</dd>
-</dl>
-    <h2><a name="Methods"></a>Methods</h2>
-    <dl class="function">
-    <dt>
-    <a name = "Gui:new"></a>
-    <strong>Gui:new (display)</strong>
-    </dt>
-    <dd>
-    Gui class constructor
+        <li><span class="parameter">color</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
 
 
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">display</span>
-            <span class="types"><a class="type" href="../classes/Display.html#">Display</a></span>
-         Display object that gui will be rendered onto
+
         </li>
     </ul>
 
@@ -140,7 +118,48 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"><span class="keyword">local</span> myGui = Gui.new( display )</pre>
+        <pre class="example"><span class="keyword">local</span> myColorPallete = Color:new(<span class="string">"textColor"</span>, colors.aqua)
+ <span class="keyword">local</span> txtColor = myColorPallete.color.textColor</pre>
+    </ul>
+
+</dd>
+</dl>
+    <h2><a name="Methods"></a>Methods</h2>
+    <dl class="function">
+    <dt>
+    <a name = "Color:new"></a>
+    <strong>Color:new (label, color, ...)</strong>
+    </dt>
+    <dd>
+    Color constructor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">label</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Label for color.
+        </li>
+        <li><span class="parameter">color</span>
+            <span class="types"><span class="type">number</span></span>
+         Color from <code>colors.colorName</code>. Look <a href="http://bit.ly/1evHuU0">here</a>. Instead of color code, you can use <code>"random"</code> for random color (every thime another color) or <code>"random static"</code> for random color that will stay same as long, as program is not closed.
+        </li>
+        <li><span class="parameter">...</span>
+         More colors and more labels, alternaiting.
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"> myColorPallete = Color:new(
+ 	<span class="string">"text"</span>, colors.black,
+ 	<span class="string">"background"</span>, colors.red,
+ 	<span class="string">"textPressed"</span>, <span class="string">"random static"</span>,
+ 	<span class="string">"backgroundPressed"</span>, <span class="string">"random"</span>
+ )</pre>
     </ul>
 
 </dd>

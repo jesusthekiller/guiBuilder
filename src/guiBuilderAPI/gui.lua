@@ -13,7 +13,7 @@
 
 local Gui = class("Gui")
 
---- Gui API version [`static`]
+--- Gui API version [`static`].
 -- @usage print(Gui._VERSION)
 Gui.static._VERSION = 0.01
 

@@ -44,9 +44,12 @@
   <li><a href="../classes/Utils.html">Utils</a></li>
   <li><a href="../classes/Display.html">Display</a></li>
   <li><a href="../classes/Connection.html">Connection</a></li>
-  <li><strong>GuiObject</strong></li>
   <li><a href="../classes/Listener.html">Listener</a></li>
   <li><a href="../classes/Event.html">Event</a></li>
+  <li><a href="../classes/Position.html">Position</a></li>
+  <li><a href="../classes/Color.html">Color</a></li>
+  <li><strong>GuiObject</strong></li>
+  <li><a href="../classes/JButton.html">JButton</a></li>
 </ul>
 <h2>Scripts</h2>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
@@ -90,26 +93,18 @@
 	<td class="summary">Listeners table.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#GuiObject.x">GuiObject.x</a></td>
-	<td class="summary">X position of upper left corner</td>
+	<td class="name" nowrap><a href="#GuiObject.position">GuiObject.position</a></td>
+	<td class="summary">Position of object</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#GuiObject.y">GuiObject.y</a></td>
-	<td class="summary">Y position of uppse left corner</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#GuiObject.width">GuiObject.width</a></td>
-	<td class="summary">Width of your object</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#GuiObject.height">GuiObject.height</a></td>
-	<td class="summary">Height of your object</td>
+	<td class="name" nowrap><a href="#GuiObject.getAllTouchEv">GuiObject.getAllTouchEv</a></td>
+	<td class="summary">Should object receive <code>display_touch</code> events from any position?</td>
 	</tr>
 </table>
 <h2><a href="#Methods">Methods</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#GuiObject:new">GuiObject:new (x, y, width, height, ...)</a></td>
+	<td class="name" nowrap><a href="#GuiObject:initialize">GuiObject:initialize (position, ...)</a></td>
 	<td class="summary">GuiObject constructor.</td>
 	</tr>
 	<tr>
@@ -173,15 +168,16 @@
 
 </dd>
     <dt>
-    <a name = "GuiObject.x"></a>
-    <strong>GuiObject.x</strong>
+    <a name = "GuiObject.position"></a>
+    <strong>GuiObject.position</strong>
     </dt>
     <dd>
-    X position of upper left corner
+    Position of object
 
 
     <ul>
-        <li><span class="parameter">x</span>
+        <li><span class="parameter">position</span>
+            <span class="types"><a class="type" href="../classes/Position.html#">Position</a></span>
 
 
 
@@ -194,57 +190,19 @@
 
 </dd>
     <dt>
-    <a name = "GuiObject.y"></a>
-    <strong>GuiObject.y</strong>
+    <a name = "GuiObject.getAllTouchEv"></a>
+    <strong>GuiObject.getAllTouchEv</strong>
     </dt>
     <dd>
-    Y position of uppse left corner
+    Should object receive <code>display_touch</code> events from any position?
+ Useful if you are making i.e drop list.
+ Please note that changeing <a href="../classes/GuiObject.html#GuiObject.position">position</a>  dynamically might be a better solution. <br/>
+ By default GuiObject:initialize sets this field to <code>false</code>.
 
 
     <ul>
-        <li><span class="parameter">y</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "GuiObject.width"></a>
-    <strong>GuiObject.width</strong>
-    </dt>
-    <dd>
-    Width of your object
-
-
-    <ul>
-        <li><span class="parameter">width</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "GuiObject.height"></a>
-    <strong>GuiObject.height</strong>
-    </dt>
-    <dd>
-    Height of your object
-
-
-    <ul>
-        <li><span class="parameter">height</span>
+        <li><span class="parameter">getAllTouchEv</span>
+            <span class="types"><span class="type">bool</span></span>
 
 
 
@@ -260,8 +218,8 @@
     <h2><a name="Methods"></a>Methods</h2>
     <dl class="function">
     <dt>
-    <a name = "GuiObject:new"></a>
-    <strong>GuiObject:new (x, y, width, height, ...)</strong>
+    <a name = "GuiObject:initialize"></a>
+    <strong>GuiObject:initialize (position, ...)</strong>
     </dt>
     <dd>
     GuiObject constructor.
@@ -270,21 +228,9 @@
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">x</span>
-            <span class="types"><span class="type">number</span></span>
-         X position of upper left corner
-        </li>
-        <li><span class="parameter">y</span>
-            <span class="types"><span class="type">number</span></span>
-         Y position of uppse left corner
-        </li>
-        <li><span class="parameter">width</span>
-            <span class="types"><span class="type">number</span></span>
-         Width of your object
-        </li>
-        <li><span class="parameter">height</span>
-            <span class="types"><span class="type">number</span></span>
-         Height of your object
+        <li><span class="parameter">position</span>
+            <span class="types"><span class="type">Postion</span></span>
+         and size of object.
         </li>
         <li><span class="parameter">...</span>
          Other parameters that your GuiObject might need
@@ -299,7 +245,7 @@
         <pre class="example"> <span class="comment">-- Call parrent's constructor
 </span> <span class="comment">--       +---- Note dot here
 </span> <span class="comment">--       V
-</span> GuiObject.new( self, x, y, width, height )</pre>
+</span> GuiObject.initialize( self, position )</pre>
     </ul>
 
 </dd>

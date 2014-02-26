@@ -14,9 +14,11 @@ file={
 	'src/guiBuilderAPI/display/connection.lua',
 
 	-- guiObject dir
-	'src/guiBuilderAPI/guiObject/guiObject.lua',
 	'src/guiBuilderAPI/guiObject/listener.lua',
 	'src/guiBuilderAPI/guiObject/event.lua',
+	'src/guiBuilderAPI/guiObject/position.lua',
+	'src/guiBuilderAPI/guiObject/color.lua',
+	'src/guiBuilderAPI/guiObject/guiObject.lua',
 
 	-- guiObjects
 	'src/guiBuilderAPI/guiObject/guiObjects/JButton.lua',
