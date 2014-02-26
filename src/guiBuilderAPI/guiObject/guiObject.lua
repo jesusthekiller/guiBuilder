@@ -49,7 +49,7 @@ local GuiObject = class("guiObject")
 -- --       V
 -- GuiObject.new( self, x, y, width, height )
 -- @function GuiObject.new
-function GuiObject:Initialize( x, y, width, height, ... )
+function GuiObject:initialize( x, y, width, height, ... )
 	self.x, self.y, self.width, self.height = x, y, width, height
 	self.listenersTable = {}
 end

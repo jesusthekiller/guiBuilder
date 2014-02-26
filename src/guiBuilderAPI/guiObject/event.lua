@@ -86,7 +86,7 @@ end
 -- @tparam Event.type eventType
 -- @tab parameters Table containing all event parameters; number indexed; starting from 1
 -- @function Event.new
-function Event:Initialize( eventType, parameters )
+function Event:initialize( eventType, parameters )
 	assert(Event.isEventType(eventType), "Parameter #1 is not valid Event.type")
 	assert(type(params) == "table", "Parameter #2 is not an table")
 

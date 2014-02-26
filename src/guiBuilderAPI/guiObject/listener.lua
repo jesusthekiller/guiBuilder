@@ -27,7 +27,7 @@ local Listener = class("Listener")
 -- @tparam Event.type event Event on which callback will be executed.
 -- @string name Name of listener
 -- @function Listener.new
-function Listener:Initialize( callback, event, name )
+function Listener:initialize( callback, event, name )
 	assert(type("callback") ~= "function", "Callback is not an function")
 	assert(type(name) ~= "string", "Name is not an string")
 
