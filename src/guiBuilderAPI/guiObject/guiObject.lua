@@ -44,16 +44,16 @@ local GuiObject = class("guiObject")
 -- --       V
 -- GuiObject.initialize( self, position )
 function GuiObject:initialize( position, ... )
-	assert(Utils.isInstance(Postion, position), "Argument position is not as instance of Postion")
+	assert(Utils.isInstance(Position, position), "Argument position is not as instance of Postion")
 	self.position = position
+	self.ID = Utils.longRandom()
 	self.listenersTable = {}
 	self.getAllTouchEv = false
 end
 
 --- Draw function.
--- @tparam Display display
 -- Called by @{Gui}
-function GuiObject:draw( display )
+function GuiObject:draw()
 	error("Your Gui object does not implement draw() funciton!")
 end
 
@@ -64,7 +64,13 @@ function GuiObject:event( event )
 	error("Your Gui object does not implement event() funciton!")
 end
 
---- Add listener [`predefined`].
+--- [`predefined`] Called when beeing registered to window.
+-- @tparam Display display
+function GuiObject:register( display )
+	self.display = display
+end
+
+--- [`predefined`] Add listener.
 -- @tparam Listener listener
 -- @param ... More listeners
 -- @treturn bool False if this listener was already registered
@@ -82,7 +88,7 @@ function GuiObject:addListener( ... )
 	return unpack(ret)
 end
 
---- Remove listener from listeners list using @{Listener} object [`predefined`].
+--- [`predefined`] Remove listener from listeners list using @{Listener} object.
 -- @tparam Listener listener Listener's name from @{Listener} constructor.
 -- @param ... More listeners
 -- @treturn bool False if this listener does not exists anymore
@@ -101,7 +107,7 @@ function GuiObject:removeListener( ... )
 	return unpack(ret)
 end
 
---- Remove listener from listeners list using listeners name [`predefined`].
+--- [`predefined`] Remove listener from listeners list using listeners name.
 -- @string listenerName Listener's name from @{Listener} constructor.
 -- @param ... More listeners
 -- @treturn bool False if this listener does not exists anymore
@@ -118,12 +124,12 @@ function GuiObject:removeListenerByName( ... )
 	return unpack(ret)
 end
 
---- Drop all listeners from listeners list [`predefined`].
+--- [`predefined`] Drop all listeners from listeners list.
 function GuiObject:removeAllListeners()
 	self.listenersTable = {}
 end
 
---- Get all listeners [`predefined`].
+--- [`predefined`] Get all listeners.
 -- @treturn listenersTable
 function GuiObject:getAllListeners()
 	return self.listenersTable

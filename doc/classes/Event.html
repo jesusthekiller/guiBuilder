@@ -94,19 +94,23 @@
 <h2><a href="#Fields">Fields</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#Event.parameters">Event.parameters</a></td>
+	<td class="name" nowrap><a href="#Event.param">Event.param</a></td>
 	<td class="summary">Parametes of event.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#Event.event">Event.event</a></td>
+	<td class="name" nowrap><a href="#Event.type">Event.type</a></td>
 	<td class="summary">Type of event.</td>
 	</tr>
 </table>
 <h2><a href="#Methods">Methods</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#Event:new">Event:new (eventType, parameters)</a></td>
+	<td class="name" nowrap><a href="#Event:new">Event:new (eventType, ...)</a></td>
 	<td class="summary">Event constructor.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Event:isWithin">Event:isWithin (position)</a></td>
+	<td class="summary">Check if event of type <code>display_touch</code> is within <code>position</code>.</td>
 	</tr>
 </table>
 
@@ -152,11 +156,17 @@
 
     <h3>Fields:</h3>
     <ul>
+        <li><span class="parameter">clicked</span>
+         Fires when object is clicked. For user's listeners. <strong>Note:</strong> <em>Has to be implemented by subclass of GuiObject</em>
+        </li>
         <li><span class="parameter">display_touch</span>
          Fires when <a href="../classes/Display.html#">Display</a> is touched. Parameters: <code>x</code>, <code>y</code>, <code>mouse button</code> (when monitor always <code>1</code>)
         </li>
         <li><span class="parameter">http</span>
          Combined <code>http_success</code> and <code>http_failure</code>. Parameters: <code>success</code>, <code>url</code>, <code>site contents</code> (when failed <code>nil</code>)
+        </li>
+        <li><span class="parameter">stop</span>
+         Event fired, when <a href="../classes/Gui.html#Gui:stop">Gui:stop</a> is called.
         </li>
         <li><span class="parameter">mouse_scroll</span>
          Terminal only
@@ -239,8 +249,8 @@
     <h2><a name="Fields"></a>Fields</h2>
     <dl class="function">
     <dt>
-    <a name = "Event.parameters"></a>
-    <strong>Event.parameters</strong>
+    <a name = "Event.param"></a>
+    <strong>Event.param</strong>
     </dt>
     <dd>
     Parametes of event.
@@ -260,8 +270,8 @@
 
 </dd>
     <dt>
-    <a name = "Event.event"></a>
-    <strong>Event.event</strong>
+    <a name = "Event.type"></a>
+    <strong>Event.type</strong>
     </dt>
     <dd>
     Type of event.
@@ -274,7 +284,7 @@
 
     <h3>Usage:</h3>
     <ul>
-        <pre class="example"> <span class="keyword">if</span> (myEvent.event == Event.<span class="global">type</span>.alarm) <span class="keyword">then</span>
+        <pre class="example"> <span class="keyword">if</span> (myEvent.<span class="global">type</span> == Event.<span class="global">type</span>.alarm) <span class="keyword">then</span>
  	<span class="global">print</span>(<span class="string">"Alarm just fired!"</span>)
  <span class="keyword">end</span></pre>
     </ul>
@@ -285,7 +295,7 @@
     <dl class="function">
     <dt>
     <a name = "Event:new"></a>
-    <strong>Event:new (eventType, parameters)</strong>
+    <strong>Event:new (eventType, ...)</strong>
     </dt>
     <dd>
     Event constructor.
@@ -299,9 +309,8 @@
 
 
         </li>
-        <li><span class="parameter">parameters</span>
-            <span class="types"><span class="type">tab</span></span>
-         Table containing all event parameters; number indexed; starting from 1
+        <li><span class="parameter">...</span>
+         Event parameters
         </li>
     </ul>
 
@@ -312,6 +321,37 @@
     <ul>
         <pre class="example"><span class="keyword">local</span> myEvent = Event:new( Event.<span class="global">type</span>.display_touch, params )</pre>
     </ul>
+
+</dd>
+    <dt>
+    <a name = "Event:isWithin"></a>
+    <strong>Event:isWithin (position)</strong>
+    </dt>
+    <dd>
+    Check if event of type <code>display_touch</code> is within <code>position</code>.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+            <span class="types"><a class="type" href="../classes/Position.html#">Position</a></span>
+
+
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+
+
+
+    </ol>
+
+
+
 
 </dd>
 </dl>

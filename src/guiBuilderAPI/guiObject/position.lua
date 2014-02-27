@@ -44,3 +44,5 @@ function Position:initialize( x, y, width, height )
 	self.width = Utils.round(width)
 	self.height = Utils.round(height)
 end
+
+return Position

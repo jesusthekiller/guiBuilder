@@ -100,11 +100,15 @@
 <h2><a href="#Methods">Methods</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#JButton:new">JButton:new (position, color, timeout, shadow)</a></td>
+	<td class="name" nowrap><a href="#JButton:new">JButton:new (position, text, color, timeout, shadow)</a></td>
 	<td class="summary">JButton constructor.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#JButton:draw">JButton:draw (display)</a></td>
+	<td class="name" nowrap><a href="#JButton:draw">JButton:draw ()</a></td>
+	<td class="summary">As specified by <a href="../classes/GuiObject.html#">GuiObject</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#JButton:event">JButton:event (event)</a></td>
 	<td class="summary">As specified by <a href="../classes/GuiObject.html#">GuiObject</a>.</td>
 	</tr>
 </table>
@@ -191,7 +195,7 @@ backgroundPressed: gray
     <dl class="function">
     <dt>
     <a name = "JButton:new"></a>
-    <strong>JButton:new (position, color, timeout, shadow)</strong>
+    <strong>JButton:new (position, text, color, timeout, shadow)</strong>
     </dt>
     <dd>
     JButton constructor.   </p>
@@ -202,6 +206,7 @@ backgroundPressed: gray
 * shadow
 * textPressed (Color when button is pressed
 * backgroundPressed (Color when button is pressed)
+* shadowPressed (Color when button is pressed)
 </code></pre>
 <p> <strong>Note:</strong> <em>if color will be left unspecified, default from</em> <a href="../classes/JButton.html#JButton.static._DEFAULT_COLOR">JButton._DEFAULT_COLOR</a> <em>will be used.</em>
 
@@ -213,6 +218,10 @@ backgroundPressed: gray
 
 
 
+        </li>
+        <li><span class="parameter">text</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         Text to be displayed on button
         </li>
         <li><span class="parameter">color</span>
             <span class="types"><a class="type" href="../classes/Color.html#">Color</a></span>
@@ -241,7 +250,21 @@ backgroundPressed: gray
 </dd>
     <dt>
     <a name = "JButton:draw"></a>
-    <strong>JButton:draw (display)</strong>
+    <strong>JButton:draw ()</strong>
+    </dt>
+    <dd>
+    As specified by <a href="../classes/GuiObject.html#">GuiObject</a>.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "JButton:event"></a>
+    <strong>JButton:event (event)</strong>
     </dt>
     <dd>
     As specified by <a href="../classes/GuiObject.html#">GuiObject</a>.
@@ -249,8 +272,10 @@ backgroundPressed: gray
 
     <h3>Parameters:</h3>
     <ul>
-        <li><span class="parameter">display</span>
-        Draw button itself
+        <li><span class="parameter">event</span>
+
+
+
         </li>
     </ul>
 

@@ -81,12 +81,20 @@
 	<td class="summary">[<code>static</code>] Safely checks if <code>test</code> is an instance of <code>class</code>.</td>
 	</tr>
 	<tr>
+	<td class="name" nowrap><a href="#Utils.static.isSubclass">Utils.static.isSubclass (class, test)</a></td>
+	<td class="summary">[<code>static</code>] Safely checks if <code>test</code> is an subclass of <code>class</code>.</td>
+	</tr>
+	<tr>
 	<td class="name" nowrap><a href="#Utils.static.round">Utils.static.round (number)</a></td>
 	<td class="summary">[<code>static</code>] Round number.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#Utils.static.drawRectangle">Utils.static.drawRectangle (position, color, display)</a></td>
 	<td class="summary">[<code>static</code>] Draw rectangle onto <code>display</code>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Utils.static.longRandom">Utils.static.longRandom (n)</a></td>
+	<td class="summary">[<code>static</code>] Generate n letters long number (saved as string).</td>
 	</tr>
 </table>
 
@@ -102,6 +110,35 @@
     </dt>
     <dd>
     [<code>static</code>] Safely checks if <code>test</code> is an instance of <code>class</code>.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">class</span>
+         Class
+        </li>
+        <li><span class="parameter">test</span>
+         Object to be tested
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        Is instance? If any of args are not object, return false.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Utils.static.isSubclass"></a>
+    <strong>Utils.static.isSubclass (class, test)</strong>
+    </dt>
+    <dd>
+    [<code>static</code>] Safely checks if <code>test</code> is an subclass of <code>class</code>.
 
 
     <h3>Parameters:</h3>
@@ -181,6 +218,28 @@
 
 
 
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Utils.static.longRandom"></a>
+    <strong>Utils.static.longRandom (n)</strong>
+    </dt>
+    <dd>
+    [<code>static</code>] Generate n letters long number (saved as string). <br/>
+ If n is invalid or nil then 100 is used instead
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">n</span>
+            <span class="types"><span class="type">number</span></span>
+         length
         </li>
     </ul>
 

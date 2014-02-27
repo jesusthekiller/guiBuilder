@@ -1,21 +1,22 @@
 dofile("guiBuilderAPI/bootstrap.lua")
 
-local a = class("a")
+display = Display:new( Connection:new(Connection.connectionType.terminal) )
+local pos = Position:new(1, 1, 3, 2)
 
-function a:initialize( x )
-	self.x = x
+local b = JButton:new( pos )
+b:register(display)
+b:draw()
+
+while true do
+	local _, bu, x, y = os.pullEvent("mouse_click")
+	if (y ~= nil) then
+		emu.log("x: "..x.."y: "..y)
+		b:event( Event:new("display_touch", x, y, bu) )
+		b:draw()
+
+		b:event( Event:new( "alarm", ({os.pullEvent("alarm")})[2] ) )
+		b:draw()
+	end
 end
 
-function a:test()
-	print(self.x)
-end
-
-local b = class("b", a)
-
-function b:initialize( x )
-	print("b:"..x)
-	a.initialize(self, x)
-end
-
-local bi = b:new( 2 )
-bi:test()
+term.setCursorPos(1, 17)

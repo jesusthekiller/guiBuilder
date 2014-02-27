@@ -17,18 +17,20 @@ local Event = class("Event")
 -- @usage for key, value in ipairs( myEvent.paratemets ) do
 -- 	print(key..": "..value)
 -- end
--- @field Event.parameters
+-- @field Event.param
 
 --- Type of event.
 -- Is field from @{Event.type}
--- @usage if (myEvent.event == Event.type.alarm) then
+-- @usage if (myEvent.type == Event.type.alarm) then
 -- 	print("Alarm just fired!")
 -- end
--- @field Event.event
+-- @field Event.type
 
 --- [`static`] Event types.
+-- @field clicked Fires when object is clicked. For user's listeners. **Note:** *Has to be implemented by subclass of GuiObject*
 -- @field display_touch Fires when @{Display} is touched. Parameters: `x`, `y`, `mouse button` (when monitor always `1`)
 -- @field http Combined `http_success` and `http_failure`. Parameters: `success`, `url`, `site contents` (when failed `nil`)
+-- @field stop Event fired, when @{Gui:stop} is called.
 -- @field mouse_scroll Terminal only
 -- @field mouse_drag Terminal only
 -- @field char Terminal only
@@ -47,8 +49,10 @@ local Event = class("Event")
 -- @field terminate
 -- @table Event.type
 Event.static.type = {
+	clicked = "clicked",
 	display_touch = "display_touch",
 	http = "http",
+	stop = "stop",
 
 	char = "char",
 	key = "key",
@@ -84,15 +88,29 @@ end
 
 --- Event constructor.
 -- @tparam Event.type eventType
--- @tab parameters Table containing all event parameters; number indexed; starting from 1
+-- @param ... Event parameters
 -- @usage local myEvent = Event:new( Event.type.display_touch, params )
 -- @function Event.new
-function Event:initialize( eventType, parameters )
+function Event:initialize( eventType, ... )
+	local parameters = {...}
 	assert(Event.isEventType(eventType), "Parameter \"eventType\" is not valid Event.type")
-	assert(type(params) == "table", "Parameter \"parameters\" is not an table")
 
-	self.event = eventType
-	self.parameters = parameters
+	self.type = eventType
+	self.param = parameters
+	-- self.parameters = self.param
+end
+
+--- Check if event of type `display_touch` is within `position`.
+-- @tparam Position position
+-- @treturn bool
+function Event:isWithin( position )
+	assert(Utils.isInstance(Position, position), "Argument \"position\" is not an instance of Position")
+	assert(self.type == Event.type.display_touch, "Event is not as \"display_touch\" event")
+	local ex, ey = tonumber(self.param[1]), tonumber(self.param[2])
+	local minX, minY = position.x, position.y
+	local maxX, maxY = minX+position.width-1, minY+position.height-1
+	--                Within X range                    Within Y range
+	return (((ex >= minX) and (ex <= maxX)) and ((ey >= minY) and (ey <= maxY)))
 end
 
 return Event

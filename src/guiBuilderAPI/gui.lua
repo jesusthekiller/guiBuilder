@@ -38,6 +38,7 @@ function Gui:start()
 
 end
 
+--- Stops gui.  
 function Gui:stop()
 
 end

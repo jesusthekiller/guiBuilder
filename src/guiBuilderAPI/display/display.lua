@@ -49,8 +49,8 @@ end
 -- Borrowed from `bios.lua`  
 -- **author: Dan200**
 -- @usage myDisplay:write( "text", "to", "write" )
--- @param ... strings to write
-function Display:write( ... )
+-- @string sText String to write
+function Display:write( sText )
 	assert(self, "Call it using ':', i.e myDisplay:doSomething()")
 	local w,h = self.native.getSize()
 	local x,y = self.native.getCursorPos()

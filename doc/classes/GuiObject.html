@@ -109,7 +109,7 @@
 	<td class="summary">GuiObject constructor.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#GuiObject:draw">GuiObject:draw (display)</a></td>
+	<td class="name" nowrap><a href="#GuiObject:draw">GuiObject:draw ()</a></td>
 	<td class="summary">Draw function.</td>
 	</tr>
 	<tr>
@@ -117,24 +117,28 @@
 	<td class="summary">Event receiver function.</td>
 	</tr>
 	<tr>
+	<td class="name" nowrap><a href="#GuiObject:register">GuiObject:register (display)</a></td>
+	<td class="summary">[<code>predefined</code>] Called when beeing registered to window.</td>
+	</tr>
+	<tr>
 	<td class="name" nowrap><a href="#GuiObject:addListener">GuiObject:addListener (listener, ...)</a></td>
-	<td class="summary">Add listener [<code>predefined</code>].</td>
+	<td class="summary">[<code>predefined</code>] Add listener.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#GuiObject:removeListener">GuiObject:removeListener (listener, ...)</a></td>
-	<td class="summary">Remove listener from listeners list using <a href="../classes/Listener.html#">Listener</a> object [<code>predefined</code>].</td>
+	<td class="summary">[<code>predefined</code>] Remove listener from listeners list using <a href="../classes/Listener.html#">Listener</a> object.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#GuiObject:removeListenerByName">GuiObject:removeListenerByName (listenerName, ...)</a></td>
-	<td class="summary">Remove listener from listeners list using listeners name [<code>predefined</code>].</td>
+	<td class="summary">[<code>predefined</code>] Remove listener from listeners list using listeners name.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#GuiObject:removeAllListeners">GuiObject:removeAllListeners ()</a></td>
-	<td class="summary">Drop all listeners from listeners list [<code>predefined</code>].</td>
+	<td class="summary">[<code>predefined</code>] Drop all listeners from listeners list.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#GuiObject:getAllListeners">GuiObject:getAllListeners ()</a></td>
-	<td class="summary">Get all listeners [<code>predefined</code>].</td>
+	<td class="summary">[<code>predefined</code>] Get all listeners.</td>
 	</tr>
 </table>
 
@@ -252,19 +256,13 @@
 </dd>
     <dt>
     <a name = "GuiObject:draw"></a>
-    <strong>GuiObject:draw (display)</strong>
+    <strong>GuiObject:draw ()</strong>
     </dt>
     <dd>
     Draw function.
+ Called by <a href="../classes/Gui.html#">Gui</a>
 
 
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">display</span>
-            <span class="types"><a class="type" href="../classes/Display.html#">Display</a></span>
-         Called by <a href="../classes/Gui.html#">Gui</a>
-        </li>
-    </ul>
 
 
 
@@ -296,11 +294,34 @@
 
 </dd>
     <dt>
+    <a name = "GuiObject:register"></a>
+    <strong>GuiObject:register (display)</strong>
+    </dt>
+    <dd>
+    [<code>predefined</code>] Called when beeing registered to window.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">display</span>
+            <span class="types"><a class="type" href="../classes/Display.html#">Display</a></span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
     <a name = "GuiObject:addListener"></a>
     <strong>GuiObject:addListener (listener, ...)</strong>
     </dt>
     <dd>
-    Add listener [<code>predefined</code>].
+    [<code>predefined</code>] Add listener.
 
 
     <h3>Parameters:</h3>
@@ -334,7 +355,7 @@
     <strong>GuiObject:removeListener (listener, ...)</strong>
     </dt>
     <dd>
-    Remove listener from listeners list using <a href="../classes/Listener.html#">Listener</a> object [<code>predefined</code>].
+    [<code>predefined</code>] Remove listener from listeners list using <a href="../classes/Listener.html#">Listener</a> object.
 
 
     <h3>Parameters:</h3>
@@ -366,7 +387,7 @@
     <strong>GuiObject:removeListenerByName (listenerName, ...)</strong>
     </dt>
     <dd>
-    Remove listener from listeners list using listeners name [<code>predefined</code>].
+    [<code>predefined</code>] Remove listener from listeners list using listeners name.
 
 
     <h3>Parameters:</h3>
@@ -398,7 +419,7 @@
     <strong>GuiObject:removeAllListeners ()</strong>
     </dt>
     <dd>
-    Drop all listeners from listeners list [<code>predefined</code>].
+    [<code>predefined</code>] Drop all listeners from listeners list.
 
 
 
@@ -412,7 +433,7 @@
     <strong>GuiObject:getAllListeners ()</strong>
     </dt>
     <dd>
-    Get all listeners [<code>predefined</code>].
+    [<code>predefined</code>] Get all listeners.
 
 
 
